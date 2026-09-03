@@ -10,7 +10,7 @@ Claude Code plugin marketplace with two learning skills for coding agents. Same 
 ## Install
 
 ```
-/plugin marketplace add alicankorkmaz-sudo/my-skill-marketplace
+/plugin marketplace add alicankorkmaz-sudo/alicankorkmaz-marketplace
 /plugin install fast-learning@alicankorkmaz-marketplace
 /plugin install road-to-mastery@alicankorkmaz-marketplace
 ```

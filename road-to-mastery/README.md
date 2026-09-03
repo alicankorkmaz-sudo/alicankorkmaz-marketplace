@@ -28,7 +28,7 @@ Everything in `teach` that mattered is kept: never trust parametric knowledge, c
 ### Claude Code (plugin marketplace)
 
 ```
-/plugin marketplace add alicankorkmaz-sudo/my-skill-marketplace
+/plugin marketplace add alicankorkmaz-sudo/alicankorkmaz-marketplace
 /plugin install road-to-mastery@alicankorkmaz-marketplace
 ```
 

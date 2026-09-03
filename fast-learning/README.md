@@ -23,11 +23,11 @@ Pick `fast-learning` when there is a date and a deliverable. Pick `road-to-maste
 ### Claude Code (plugin marketplace)
 
 ```
-/plugin marketplace add alicankorkmaz-sudo/my-skill-marketplace
+/plugin marketplace add alicankorkmaz-sudo/alicankorkmaz-marketplace
 /plugin install fast-learning@alicankorkmaz-marketplace
 ```
 
-`alicankorkmaz-sudo/my-skill-marketplace` is the GitHub repo whose root `.claude-plugin/marketplace.json` lists both `fast-learning` and `road-to-mastery` as local sources.
+`alicankorkmaz-sudo/alicankorkmaz-marketplace` is the GitHub repo whose root `.claude-plugin/marketplace.json` lists both `fast-learning` and `road-to-mastery` as local sources.
 
 Then, in the directory you want to use as the learning workspace:
 

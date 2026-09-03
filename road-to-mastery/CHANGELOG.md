@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 ## [0.1.1] - 2026-09-03
 
 ### Changed
-- Moved into the `alicankorkmaz-sudo/my-skill-marketplace` monorepo alongside `fast-learning`; the marketplace catalog now lives at that repo's root. Removed the plugin-local `marketplace.json` and release workflow. Tags are now `road-to-mastery-vX.Y.Z`.
+- Moved into the `alicankorkmaz-sudo/alicankorkmaz-marketplace` monorepo alongside `fast-learning`; the marketplace catalog now lives at that repo's root. Removed the plugin-local `marketplace.json` and release workflow. Tags are now `road-to-mastery-vX.Y.Z`.
 - README install instructions point at the new marketplace repo.
 
 ## [0.1.0] - 2026-09-03
@@ -22,6 +22,6 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 ### Credits
 - Workspace model, philosophy and several format files adapted from Matt Pocock's `teach` skill (MIT).
 
-[Unreleased]: https://github.com/alicankorkmaz-sudo/my-skill-marketplace/compare/road-to-mastery-v0.1.1...HEAD
-[0.1.1]: https://github.com/alicankorkmaz-sudo/my-skill-marketplace/releases/tag/road-to-mastery-v0.1.1
+[Unreleased]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/compare/road-to-mastery-v0.1.1...HEAD
+[0.1.1]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/releases/tag/road-to-mastery-v0.1.1
 [0.1.0]: https://github.com/alicankorkmaz-sudo/road-to-mastery/releases/tag/v0.1.0

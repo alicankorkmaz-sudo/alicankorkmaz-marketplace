@@ -6,8 +6,8 @@
     "name": "Alican Korkmaz",
     "url": "https://github.com/alicankorkmaz-sudo"
   },
-  "homepage": "https://github.com/alicankorkmaz-sudo/my-skill-marketplace/tree/main/road-to-mastery",
-  "repository": "https://github.com/alicankorkmaz-sudo/my-skill-marketplace",
+  "homepage": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/tree/main/road-to-mastery",
+  "repository": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace",
   "license": "MIT",
   "keywords": ["learning", "teaching", "mentorship", "mastery", "deliberate-practice", "productivity"],
   "skills": ["./skills/road-to-mastery"]
