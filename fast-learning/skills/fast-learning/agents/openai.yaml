@@ -1,0 +1,5 @@
+interface:
+  display_name: "Fast Learning"
+  short_description: "Teach me to do one concrete thing with a topic by a deadline, fast"
+policy:
+  allow_implicit_invocation: false

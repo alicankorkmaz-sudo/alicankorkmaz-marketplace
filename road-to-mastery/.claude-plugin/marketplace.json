@@ -1,0 +1,17 @@
+{
+  "name": "alicankorkmaz-marketplace",
+  "owner": {
+    "name": "Alican Korkmaz",
+    "url": "https://github.com/alicankorkmaz-sudo"
+  },
+  "description": "Road to Mastery: a stateful, feedback-rich mentorship skill, installable as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "road-to-mastery",
+      "source": "./",
+      "description": "Mentor the user from their current level to mastery: mission, diagnosis, adaptive challenges with multi-approach expert feedback, elite mental models, spaced recall.",
+      "category": "productivity",
+      "keywords": ["learning", "teaching", "mentorship", "mastery"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "alicankorkmaz-marketplace",
+  "owner": {
+    "name": "Alican Korkmaz",
+    "url": "https://github.com/alicankorkmaz-sudo"
+  },
+  "description": "Learning skills for coding agents: fast-learning (speed to functional competence by a deadline) and road-to-mastery (depth-first mentorship to expertise).",
+  "plugins": [
+    {
+      "name": "fast-learning",
+      "source": "./fast-learning",
+      "description": "Teach the user to do one concrete thing with a topic by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs.",
+      "category": "productivity",
+      "keywords": ["learning", "teaching", "crash-course", "spaced-repetition", "retrieval-practice"]
+    },
+    {
+      "name": "road-to-mastery",
+      "source": "./road-to-mastery",
+      "description": "Mentor the user from their current level to mastery: mission, diagnosis, adaptive challenges with multi-approach expert feedback, elite mental models, spaced recall.",
+      "category": "productivity",
+      "keywords": ["learning", "teaching", "mentorship", "mastery"]
+    }
+  ]
+}

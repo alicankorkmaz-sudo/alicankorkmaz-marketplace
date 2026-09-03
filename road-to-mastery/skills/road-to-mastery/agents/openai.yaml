@@ -1,0 +1,5 @@
+interface:
+  display_name: "Road to Mastery"
+  short_description: "Mentor me from my current level to mastery in a stateful workspace"
+policy:
+  allow_implicit_invocation: false
