@@ -1,13 +1,13 @@
 {
   "name": "road-to-mastery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A stateful mentorship skill that takes a learner from their current level to mastery through diagnosis, adaptive real-world challenges, multi-approach expert feedback and elite synthesis. Hybrid of Matt Pocock's `teach` skill and the Road to Mastery mentor prompt.",
   "author": {
     "name": "Alican Korkmaz",
     "url": "https://github.com/alicankorkmaz-sudo"
   },
-  "homepage": "https://github.com/alicankorkmaz-sudo/road-to-mastery",
-  "repository": "https://github.com/alicankorkmaz-sudo/road-to-mastery",
+  "homepage": "https://github.com/alicankorkmaz-sudo/my-skill-marketplace/tree/main/road-to-mastery",
+  "repository": "https://github.com/alicankorkmaz-sudo/my-skill-marketplace",
   "license": "MIT",
   "keywords": ["learning", "teaching", "mentorship", "mastery", "deliberate-practice", "productivity"],
   "skills": ["./skills/road-to-mastery"]

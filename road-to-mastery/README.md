@@ -28,7 +28,7 @@ Everything in `teach` that mattered is kept: never trust parametric knowledge, c
 ### Claude Code (plugin marketplace)
 
 ```
-/plugin marketplace add alicankorkmaz-sudo/road-to-mastery
+/plugin marketplace add alicankorkmaz-sudo/my-skill-marketplace
 /plugin install road-to-mastery@alicankorkmaz-marketplace
 ```
 
@@ -68,8 +68,8 @@ reference/            printable cards, each ending in recall questions
 ## Versioning and releases
 
 - [Semantic versioning](https://semver.org). The version lives in `.claude-plugin/plugin.json` and is the pin Claude Code uses: users get an update only when it changes.
-- Every release is a git tag `vX.Y.Z` and an entry in [CHANGELOG.md](./CHANGELOG.md) (Keep a Changelog format).
-- Bumping: edit `plugin.json` version → add CHANGELOG entry → `git tag vX.Y.Z` → push tags. A GitHub Action in `.github/workflows/release.yml` turns the tag into a GitHub Release with the changelog section as its body.
+- Every release is a git tag `road-to-mastery-vX.Y.Z` in the marketplace repo and an entry in [CHANGELOG.md](./CHANGELOG.md) (Keep a Changelog format).
+- Bumping: edit `plugin.json` version → add CHANGELOG entry → `git tag road-to-mastery-vX.Y.Z` → push tags. The marketplace repo's release workflow turns the tag into a GitHub Release with the changelog section as its body.
 - **Patch**: wording, typos, format-file tweaks. **Minor**: new phase behaviour, new format file, new workspace file. **Major**: a change that makes existing workspaces incompatible (renamed files, changed numbering).
 
 ## Contributing
