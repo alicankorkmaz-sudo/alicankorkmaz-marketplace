@@ -1,6 +1,6 @@
 ---
 name: road-to-mastery
-description: Mentor the user from their current level to mastery of a topic, across multiple sessions, in a stateful workspace. Diagnose, then run an adaptive loop of real-world challenges with multi-approach expert feedback, then synthesize elite mental models. Use when the user says "mentor me", "coach me", "take me to mastery", or invokes /road-to-mastery.
+description: Mentor the user from their current level to mastery of a topic, across multiple sessions, in a stateful workspace. Diagnose, then run an adaptive loop of real-world challenges with multi-approach expert feedback, then synthesize elite mental models. Use when the user says "mentor me", "coach me", "take me to mastery", or invokes /learning:road-to-mastery.
 disable-model-invocation: true
 argument-hint: What do you want to master?
 ---

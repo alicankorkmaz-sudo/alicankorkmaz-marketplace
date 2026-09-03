@@ -3,9 +3,9 @@ MIT License
 Copyright (c) 2026 Alican Korkmaz
 
 The workspace model (stateful learning directory, resource, glossary and
-reference-card conventions) is derived from mattpocock/skills
-(skills/productivity/teach), Copyright (c) 2026 Matt Pocock, licensed under
-the MIT License.
+reference-card conventions) used by both skills is derived from
+mattpocock/skills (skills/productivity/teach), Copyright (c) 2026 Matt Pocock,
+licensed under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

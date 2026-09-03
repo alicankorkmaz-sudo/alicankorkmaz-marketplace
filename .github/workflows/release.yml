@@ -3,8 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "fast-learning-v*.*.*"
-      - "road-to-mastery-v*.*.*"
+      - "v*.*.*"
 
 permissions:
   contents: write
@@ -15,23 +14,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Resolve plugin and version from tag
+      - name: Resolve version from tag
         id: tag
-        run: |
-          PLUGIN="${GITHUB_REF_NAME%-v*}"
-          VERSION="${GITHUB_REF_NAME##*-v}"
-          echo "plugin=$PLUGIN" >> "$GITHUB_OUTPUT"
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
       - name: Check plugin.json version matches tag
         run: |
-          VERSION=$(jq -r .version "${{ steps.tag.outputs.plugin }}/.claude-plugin/plugin.json")
+          VERSION=$(jq -r .version learning/.claude-plugin/plugin.json)
           if [ "$VERSION" != "${{ steps.tag.outputs.version }}" ]; then
             echo "Tag says ${{ steps.tag.outputs.version }}, plugin.json says $VERSION"; exit 1
           fi
 
       - name: Validate manifests
-        run: jq empty .claude-plugin/marketplace.json "${{ steps.tag.outputs.plugin }}/.claude-plugin/plugin.json"
+        run: jq empty .claude-plugin/marketplace.json learning/.claude-plugin/plugin.json
 
       - name: Extract changelog section
         run: |
@@ -39,11 +34,11 @@ jobs:
             $0 ~ "^## \\["ver"\\]" {p=1; next}
             p && /^## \[/ {exit}
             p {print}
-          ' "${{ steps.tag.outputs.plugin }}/CHANGELOG.md" > release-notes.md
+          ' learning/CHANGELOG.md > release-notes.md
           cat release-notes.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: ${{ steps.tag.outputs.plugin }} ${{ steps.tag.outputs.version }}
+          name: learning ${{ steps.tag.outputs.version }}
           body_path: release-notes.md

@@ -4,21 +4,14 @@
     "name": "Alican Korkmaz",
     "url": "https://github.com/alicankorkmaz-sudo"
   },
-  "description": "Learning skills for coding agents: fast-learning (speed to functional competence by a deadline) and road-to-mastery (depth-first mentorship to expertise).",
+  "description": "Learning skills for coding agents: fast-learning (speed to functional competence by a deadline) and road-to-mastery (depth-first mentorship to expertise), shipped as one plugin.",
   "plugins": [
     {
-      "name": "fast-learning",
-      "source": "./fast-learning",
-      "description": "Teach the user to do one concrete thing with a topic by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs.",
+      "name": "learning",
+      "source": "./learning",
+      "description": "Two learning skills: fast-learning (do one concrete thing by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs) and road-to-mastery (mentorship to expertise: mission, diagnosis, adaptive challenges with multi-approach expert feedback, elite mental models, spaced recall).",
       "category": "productivity",
-      "keywords": ["learning", "teaching", "crash-course", "spaced-repetition", "retrieval-practice"]
-    },
-    {
-      "name": "road-to-mastery",
-      "source": "./road-to-mastery",
-      "description": "Mentor the user from their current level to mastery: mission, diagnosis, adaptive challenges with multi-approach expert feedback, elite mental models, spaced recall.",
-      "category": "productivity",
-      "keywords": ["learning", "teaching", "mentorship", "mastery"]
+      "keywords": ["learning", "teaching", "mentorship", "mastery", "crash-course", "spaced-repetition", "retrieval-practice"]
     }
   ]
 }
