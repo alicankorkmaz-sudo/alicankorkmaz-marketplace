@@ -1,7 +1,6 @@
 ---
 name: fast-learning
 description: Teach the user to DO one concrete thing with a topic by a deadline — speed to functional competence, not expertise. Placement test, the 20% syllabus that unlocks the outcome, retrieval checks, a spaced-retrieval queue and graded Feynman explain-backs, in a stateful workspace across sessions. Use when the user says "teach me X fast", "I need to be able to do Y by Z", "crash course", or invokes /learning:fast-learning. For depth-first, long-term expertise use the sibling skill road-to-mastery instead.
-disable-model-invocation: true
 argument-hint: What do you need to learn, by when?
 ---
 
