@@ -23,7 +23,7 @@
 
 ## Rules
 
-- **One mission per workspace.** Two unrelated topics means two workspaces.
+- **One mission per workspace.** Two unrelated topics means two workspaces: sibling directories in one learning home (see *Topics* in `SKILL.md`).
 - **Concrete over abstract.** "Pass the CKA exam in November" beats "learn Kubernetes". "Negotiate my next contract 20% higher" beats "get better at negotiation".
 - **Push back on vagueness.** If the user cannot say why, interview them before writing anything. A bad mission is worse than no mission.
 - **Revise when reality shifts.** When the goal moves, update this file and write a learning record. Confirm with the user first.

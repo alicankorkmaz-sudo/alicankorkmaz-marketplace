@@ -28,12 +28,14 @@ Pick `fast-learning` when there is a date and a deliverable. Pick `road-to-maste
 /plugin install learning@alicankorkmaz-marketplace
 ```
 
-Then, in the directory you want to use as the learning workspace:
+Then, in a directory you use as your learning home (e.g. `~/learning`):
 
 ```
 /learning:fast-learning Deploy a FastAPI service to Fly.io with Postgres, by 1 October
 /learning:road-to-mastery Rust ownership and borrowing
 ```
+
+Each topic gets its own subdirectory. See [Topics](#topics).
 
 ### Codex
 
@@ -106,15 +108,37 @@ learning-records/     0001-…md  decision-grade insights
 reference/            printable cards, each ending in recall questions
 ```
 
+## Topics
+
+One topic, one directory. Run either skill from a **learning home** and it resolves the topic for you:
+
+```
+learning/                  learning home
+├── LEARNER.md             cross-topic preferences: language, pace, question style
+├── elektronik/            one topic: MISSION.md, BASELINE.md, challenges/, …
+│   └── fast-learning/     fast-learning on the same topic, if you run both
+├── japonca/
+└── fastapi-deploy/
+```
+
+- **Topic given** (`/learning:road-to-mastery japonca`): matched against directory names and mission titles. No match → a new `./<slug>/` is created.
+- **No topic given**: no topics yet → it asks; one → it opens it; several → it lists them and asks.
+- **Opened inside a topic directory** (`cd learning/elektronik`): works on that topic directly.
+- **Old single-topic layout** (learning files sitting right in the directory) and you name a different topic: the skill offers to move the existing files into `./<existing-slug>/` and open the new topic next to it. It shows the exact moves and waits for a yes.
+
+`LEARNER.md` holds preferences that apply to every topic; each topic's `NOTES.md` holds the rest. Both skills read and write `LEARNER.md`.
+
 ## Using both skills
 
-Both use `MISSION.md`, `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md` and `reference/`, and `road-to-mastery` treats whatever `MISSION.md` it finds as its own. So the two never share a root:
+Both use `MISSION.md`, `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md` and `reference/`, and older `road-to-mastery` versions treat whatever `MISSION.md` they find as their own. So the two never share a root:
 
 - Every shared-name file written by `fast-learning` starts with the line `<!-- fast-learning -->`.
 - If `fast-learning` finds a `road-to-mastery` workspace in the current directory (`BASELINE.md`, `challenges/`, `learning-records/`, or an unmarked `MISSION.md`), it keeps its own files under `./fast-learning/` and says so once.
 - At graduation, the `fast-learning` hand-off to `road-to-mastery` always goes to a different directory.
 
-Rule of thumb: one directory per skill per topic.
+- `road-to-mastery` never opens on a directory where `fast-learning` sits at the top level; in a learning home it uses a sibling `<slug>-mastery/` instead.
+
+Rule of thumb: one directory per skill per topic, all inside one learning home.
 
 ## Versioning and releases
 

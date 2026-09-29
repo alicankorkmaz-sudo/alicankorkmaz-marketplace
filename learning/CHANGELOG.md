@@ -7,6 +7,22 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-09-29
+
+### Added
+- Multi-topic learning homes. Both skills resolve a topic directory at session start: the current directory if it already holds a topic, otherwise a subdirectory of the learning home matched by name or mission title, created as `./<slug>/` when new. With no topic given and several topics present, the skill lists them and asks.
+- Conversion of a single-topic layout: naming a different topic in a directory that already holds one offers to move the existing learning files into `./<existing-slug>/` and open the new topic beside it, after showing the moves and getting a yes.
+- `LEARNER.md` in the learning home for cross-topic preferences (language, pace, question style), read and written by both skills. Topic-specific preferences stay in `NOTES.md`.
+
+### Changed
+- `road-to-mastery` ignores a `MISSION.md` marked `<!-- fast-learning -->` and never shares a root with top-level `fast-learning` files; in a learning home it opens a sibling `<slug>-mastery/`.
+- Existing single-topic workspaces keep working unchanged when opened without naming a different topic.
+
+## [0.2.1] - 2026-09-29
+
+### Fixed
+- Both skills can be invoked by the model again (removed `disable-model-invocation`).
+
 ## [0.2.0] - 2026-09-03
 
 ### Changed
@@ -49,7 +65,9 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 ### Credits
 - Workspace model, philosophy and several format files adapted from Matt Pocock's `teach` skill (MIT).
 
-[Unreleased]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/releases/tag/v0.3.0
+[0.2.1]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/releases/tag/v0.2.0
 [fast-learning 0.1.0]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/releases/tag/fast-learning-v0.1.0
 [road-to-mastery 0.1.1]: https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/releases/tag/road-to-mastery-v0.1.1

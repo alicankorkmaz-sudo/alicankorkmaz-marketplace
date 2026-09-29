@@ -1,6 +1,6 @@
 {
   "name": "learning",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Two stateful learning skills for coding agents, same workspace model, opposite optimisation: fast-learning (speed to functional competence by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs) and road-to-mastery (depth-first mentorship to expertise: diagnosis, adaptive real-world challenges, multi-approach expert feedback, elite mental models, spaced recall).",
   "author": {
     "name": "Alican Korkmaz",

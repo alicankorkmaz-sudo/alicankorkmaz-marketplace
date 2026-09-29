@@ -26,7 +26,7 @@ Reply in the language the user opened the session with; if they switch, switch w
 
 ## Workspace
 
-Treat the current directory as the workspace (subject to *Coexistence* below). Create directories lazily, on first write.
+One topic, one directory. At session start, first find the topic directory (*Topics* below), then the workspace root inside it (*Coexistence* below). Create directories lazily, on first write.
 
 - `MISSION.md` — outcome ("be able to do Y by Z", never "understand X"), deadline (default four weeks if none given; say so), hours per week, done-when checks, out of scope. Format: [MISSION-FORMAT.md](./MISSION-FORMAT.md).
 - `PLACEMENT.md` — placement result: known / shaky / unknown / misconceptions, each with evidence. Rewritten on re-test. Format: [PLACEMENT-FORMAT.md](./PLACEMENT-FORMAT.md).
@@ -36,18 +36,33 @@ Treat the current directory as the workspace (subject to *Coexistence* below). C
 - `reference/*.md` — printable one-page cards, each ending in 3–5 recall questions. Format: [REFERENCE-CARD-FORMAT.md](./REFERENCE-CARD-FORMAT.md).
 - `RESOURCES.md` — curated high-trust sources, every entry annotated. Populate before teaching. Format: [RESOURCES-FORMAT.md](./RESOURCES-FORMAT.md).
 - `GLOSSARY.md` — a term enters only after the user passes explain-back on it. Format: [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md).
-- `NOTES.md` — user preferences: pace, tone, quiz appetite, example domains, things to avoid. Read every session.
+- `NOTES.md` — user preferences for this topic: pace, tone, quiz appetite, example domains, things to avoid. Read every session.
+
+### Topics
+
+A directory **holds a topic** when it contains a learning artefact from this skill or from `road-to-mastery`: `MISSION.md`, `SYLLABUS.md`, `SRS.md`, `PLACEMENT.md`, `BASELINE.md`, `lessons/`, `challenges/`, `learning-records/` or `fast-learning/`. A **learning home** is a directory whose subdirectories hold topics, one each. Find the topic directory once, at session start:
+
+1. **The current directory holds a topic.**
+   - No topic given, or the one given is this directory's topic (its `MISSION.md` or `fast-learning/MISSION.md`) → this is the topic directory.
+   - A different topic given → this is a single-topic layout. Offer to turn it into a learning home: move its learning files (the artefacts above plus `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md`, `reference/`) into `./<existing-slug>/`, then open the new topic in `./<new-slug>/`. Show the exact moves and wait for a yes; move nothing else. On a no, tell the user to open the new topic in a different directory, and stop.
+2. **Otherwise the current directory is a learning home**, possibly still empty. Its topics are the immediate subdirectories that hold one.
+   - Topic given → match it against directory names and `MISSION.md` titles. A match is the topic directory; if several match, prefer the one that already holds a fast-learning workspace, and ask if that still leaves more than one. No match → create `./<slug>/`. Say so once.
+   - No topic given → none yet: ask what they need to be able to do. One: use it. Several: list each with its mission's outcome and ask which.
+
+Slugs are short, lowercase, hyphenated and in the user's language (`elektronik`, `japonca`, `fastapi-deploy`).
+
+**Cross-topic preferences** live in `LEARNER.md` in the learning home: language, pace, question style, formats that land. Read it at session start when it sits in the topic directory's parent. Once a learning home exists, a preference that isn't specific to this topic goes there, not in `NOTES.md`. When converting a single-topic layout, offer to lift the general preferences out of `NOTES.md` into `LEARNER.md`. `LEARNER.md` is shared with `road-to-mastery` and carries no marker.
 
 ### Coexistence with road-to-mastery
 
-Both skills use `MISSION.md`, `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md` and `reference/`, and `road-to-mastery` reads whatever `MISSION.md` it finds. The two must never share a root. Resolve the workspace root once, at session start:
+Both skills use `MISSION.md`, `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md` and `reference/`, and older `road-to-mastery` versions read whatever `MISSION.md` they find. The two must never share a root. Inside the topic directory, resolve the workspace root once, at session start ("here" is the topic directory):
 
-1. `./fast-learning/MISSION.md` exists → root is `./fast-learning/`.
-2. Else `SYLLABUS.md`, `SRS.md` or `PLACEMENT.md` exists here → root is the current directory.
+1. `fast-learning/MISSION.md` exists here → root is `./fast-learning/`.
+2. Else `SYLLABUS.md`, `SRS.md` or `PLACEMENT.md` exists here → root is the topic directory.
 3. Else a road-to-mastery artefact exists here (`BASELINE.md`, `challenges/`, `learning-records/`, or a `MISSION.md` whose first line is not `<!-- fast-learning -->`) → root is `./fast-learning/`. Tell the user once.
-4. Else → root is the current directory.
+4. Else → root is the topic directory.
 
-Every file you write whose name is shared with road-to-mastery starts with the line `<!-- fast-learning -->`. Never read or modify road-to-mastery files. When handing off at graduation, tell the user to open road-to-mastery in a **different directory**.
+Every file you write whose name is shared with road-to-mastery starts with the line `<!-- fast-learning -->`. Never read or modify road-to-mastery files. When handing off at graduation, tell the user to open road-to-mastery in a **different directory** (in a learning home, road-to-mastery picks a sibling directory itself).
 
 ### No filesystem? Run in conversation mode
 
@@ -57,7 +72,7 @@ If you cannot read or write files (e.g. a chat interface), run the same protocol
 
 ### Session start (~5 min, every session)
 
-1. Read `MISSION.md`, `SYLLABUS.md`, `SRS.md`, `NOTES.md`.
+1. Find the topic and the root (*Topics*, *Coexistence*). Read `LEARNER.md` if present, then `MISSION.md`, `SYLLABUS.md`, `SRS.md`, `NOTES.md`.
 2. Ask every SRS item due today **from memory, one at a time, before any new material**. Grade each; update `SRS.md` per its box rules.
 3. Fit check: remaining lesson minutes vs. `hours left to deadline × 60 × 0.8`. If it doesn't fit, say so now and propose cuts from the bottom of the syllabus.
 4. One sentence on what today covers.
@@ -94,7 +109,7 @@ Then write `lessons/NNNN-slug.md` (explain-back verbatim) and update the lesson'
 
 1. Update every SRS due date from today's results.
 2. Write or update the reference card for today's concepts, each card ending in 3–5 recall questions.
-3. Update `NOTES.md` with any new preference.
+3. Update `NOTES.md` with any new preference for this topic, `LEARNER.md` with cross-topic ones.
 4. Tell the user, in three lines: what they can now do, what is due next time, one thing to try before then.
 
 ## Graduation
@@ -102,7 +117,7 @@ Then write `lessons/NNNN-slug.md` (explain-back verbatim) and update the lesson'
 When every load-bearing lesson is done and its concept has survived SRS box 3, the outcome is met. Say so, walk the done-when checks in `MISSION.md` with the user, then offer two paths:
 
 - **Hold:** weekly SRS drills until every concept retires at box 6.
-- **Deepen:** open a `road-to-mastery` workspace on the same topic, in a different directory, and carry `RESOURCES.md` over.
+- **Deepen:** open a `road-to-mastery` workspace on the same topic, in a different directory (in a learning home, road-to-mastery picks a sibling directory itself), and carry `RESOURCES.md` over.
 
 ## Quiz discipline
 

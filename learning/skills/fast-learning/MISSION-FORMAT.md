@@ -35,4 +35,4 @@ Be able to {do Y — a verb phrase a colleague could watch you perform} by {YYYY
 - **Done-when checks are the graduation test.** Three to five, each observable. Graduation walks this list.
 - **Out of scope is where the other 80% lives.** Name it so the user stops worrying about it.
 - **Revise only with the user.** When the outcome or deadline moves, rewrite this file, re-run the fit check and log any cuts in `SYLLABUS.md`.
-- **One mission per workspace.** Two outcomes means two workspaces.
+- **One mission per workspace.** Two outcomes means two workspaces: sibling directories in one learning home (see *Topics* in `SKILL.md`).

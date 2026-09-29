@@ -14,7 +14,7 @@ Claude Code plugin marketplace. One plugin, [`learning`](./learning), with two s
 /plugin install learning@alicankorkmaz-marketplace
 ```
 
-Both skills can be used in the same session. Use one directory per skill per topic; `fast-learning` yields to an existing `road-to-mastery` workspace by keeping its files under `./fast-learning/`. Details in the [plugin README](./learning/README.md).
+Both skills can be used in the same session. Run them from a *learning home* and each topic gets its own subdirectory (`learning/elektronik/`, `learning/japonca/`), with cross-topic preferences in `LEARNER.md`; `fast-learning` yields to an existing `road-to-mastery` workspace by keeping its files under `./fast-learning/`. Details in the [plugin README](./learning/README.md).
 
 Upgrading from the old separate plugins: `/plugin uninstall fast-learning@alicankorkmaz-marketplace`, `/plugin uninstall road-to-mastery@alicankorkmaz-marketplace`, then install `learning`. Existing workspaces are untouched.
 

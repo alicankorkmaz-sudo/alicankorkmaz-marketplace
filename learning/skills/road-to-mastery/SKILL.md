@@ -14,7 +14,7 @@ Reply in the language the user used to open the session. If they switch language
 
 ## Teaching Workspace
 
-Treat the current directory as the teaching workspace. Learning state lives in these files:
+One topic, one directory. Resolve the workspace root (*Topics* below) before reading anything else. Learning state lives in these files, under that root:
 
 - `MISSION.md` — *why* the user wants this. Grounds every decision. Format: [MISSION-FORMAT.md](./MISSION-FORMAT.md).
 - `BASELINE.md` — the result of Phase 1 diagnosis: current level, strengths, gaps, thinking style. Rewritten when the picture changes. Format: [BASELINE-FORMAT.md](./BASELINE-FORMAT.md).
@@ -26,6 +26,23 @@ Treat the current directory as the teaching workspace. Learning state lives in t
 - `NOTES.md` — your scratchpad for user preferences (pace, tone, formats, things to avoid).
 
 Create directories lazily, on first write. Never rewrite history: supersede learning records, don't delete them.
+
+### Topics
+
+A directory **holds a topic** when it contains a learning artefact from this skill or from `fast-learning`: `MISSION.md`, `BASELINE.md`, `SYLLABUS.md`, `SRS.md`, `PLACEMENT.md`, `challenges/`, `learning-records/`, `lessons/` or `fast-learning/`. A **learning home** is a directory whose subdirectories hold topics, one each. Resolve the root once, at session start:
+
+1. **The current directory holds a topic.**
+   - No topic given, or the one given is this directory's mission → root is the current directory.
+   - A different topic given → this is a single-topic layout. Offer to turn it into a learning home: move its learning files (the artefacts above plus `RESOURCES.md`, `GLOSSARY.md`, `NOTES.md`, `reference/`) into `./<existing-slug>/`, then open the new topic in `./<new-slug>/`. Show the exact moves and wait for a yes; move nothing else. On a no, tell the user to open the new topic in a different directory, and stop.
+2. **Otherwise the current directory is a learning home**, possibly still empty. Its topics are the immediate subdirectories that hold one.
+   - Topic given → match it against directory names and `MISSION.md` titles. A match is the root; if several match, prefer the one that already holds a road-to-mastery workspace, and ask if that still leaves more than one. No match → create `./<slug>/`; that is the root. Say so once.
+   - No topic given → none yet: ask what they want to master. One: use it. Several: list each with its mission's one-line *why* and ask which.
+
+Slugs are short, lowercase, hyphenated and in the user's language (`elektronik`, `japonca`, `rust-ownership`).
+
+A `MISSION.md` whose first line is `<!-- fast-learning -->` belongs to `fast-learning`, never to you. If the chosen root has `fast-learning` files at its top level (that marker, `SYLLABUS.md`, `SRS.md`, `PLACEMENT.md`), don't share it: in a learning home, open your workspace in a sibling `../<slug>-mastery/`; otherwise ask the user for a different directory. `fast-learning` files under `./fast-learning/` are fine; leave them alone.
+
+**Cross-topic preferences** live in `LEARNER.md` in the learning home: language, pace, question style, formats that land. Read it at session start when it sits in the root's parent directory. A preference that isn't specific to this topic goes there, not in `NOTES.md`, once a learning home exists. When converting a single-topic layout, offer to lift the general preferences out of `NOTES.md` into `LEARNER.md`.
 
 ### No filesystem? Run in conversation mode
 
@@ -54,7 +71,7 @@ Every session runs through the same spine. Which phase dominates depends on wher
 
 ### Session start (every session)
 
-1. Read `MISSION.md`, `BASELINE.md`, `NOTES.md`, the latest 3–5 learning records, and the latest reference card.
+1. Resolve the root (*Topics*). Read `LEARNER.md` if present, then `MISSION.md`, `BASELINE.md`, `NOTES.md`, the latest 3–5 learning records, and the latest reference card.
 2. If a previous reference card has **recall questions**, ask them first, from memory, before anything else. This is spaced retrieval; it is the most valuable minute of the session. Record hits and misses.
 3. Decide, from the records and the mission, what sits in the zone of proximal development today: challenging *just enough*.
 4. Tell the user in two sentences what today's session will do.
@@ -113,7 +130,7 @@ Enter this phase when learning records show the user handling Phase 2 challenges
 
 1. Write or update a **reference card** capturing the compressed essence of what was covered, ending with **3–5 recall questions** for next session.
 2. Write any pending learning records.
-3. Update `NOTES.md` with new preferences.
+3. Update `NOTES.md` with new preferences for this topic, `LEARNER.md` with cross-topic ones.
 4. Tell the user, in three lines: what they demonstrated today, what the next session will target, and one thing to try in the real world before then.
 
 ## Feedback Discipline
@@ -135,6 +152,6 @@ Enter this phase when learning records show the user handling Phase 2 challenges
 
 Reference cards are what the user will actually revisit. Make them the compressed essence of what was learned, formatted for quick scanning and printing. Natural candidates: syntax and snippets, algorithms and flowcharts, checklists, decision trees, mental-model summaries, glossary excerpts, sequences and routines. Every card ends with recall questions.
 
-## `NOTES.md`
+## `NOTES.md` and `LEARNER.md`
 
-The user will tell you how they like to be taught: pace, tone, which formats land, what annoys them, whether they want community suggestions. Record it here and read it every session.
+The user will tell you how they like to be taught: pace, tone, which formats land, what annoys them, whether they want community suggestions. Record it and read it every session: in `LEARNER.md` when it holds for every topic and a learning home exists, in `NOTES.md` when it is about this topic or there is no home.
