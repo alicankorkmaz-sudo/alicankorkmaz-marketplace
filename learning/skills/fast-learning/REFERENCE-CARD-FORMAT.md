@@ -40,3 +40,7 @@ _Updated {YYYY-MM-DD} · Lessons {NNNN, NNNN} · Sources: {RESOURCES.md entries}
 - **Rotate questions.** After two consecutive hits on a question, replace it with a harder one. Log persistent misses in the lesson file's retest section.
 - **Cards are updated, lessons are not.** When a later lesson sharpens a concept, edit the card in place and bump the date.
 - **Print test.** If it would not survive being printed and pinned above a desk, it is not finished.
+
+## HTML companion
+
+When a card holds a formula, a calculation or a decision procedure that is easier to grasp by playing with it, also write `{slug}.html` next to it: one self-contained page (inline CSS and JS, no network) with the same content plus a small calculator, slider or clickable decision tree, readable in light and dark mode and printable. The Markdown card stays the source of truth; regenerate the HTML whenever the card changes, and skip it for cards that are plain lists.

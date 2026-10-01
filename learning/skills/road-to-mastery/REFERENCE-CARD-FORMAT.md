@@ -36,3 +36,7 @@ _Updated: {date} · Sources: {RESOURCES.md entries}_
 - **Rotate recall questions.** When the user answers a question correctly across two sessions, retire it and add a harder one. Record persistent misses as a learning record.
 - **Cards supersede lessons.** If a challenge or knowledge block said it better, move it here; the challenge file is the log, the card is the artefact.
 - **Print test.** If it wouldn't survive being printed and pinned above a desk, it is not finished.
+
+## HTML companion
+
+When a card holds a formula, a calculation or a decision procedure that is easier to grasp by playing with it, also write `{slug}.html` next to it: one self-contained page (inline CSS and JS, no network) with the same content plus a small calculator, slider or clickable decision tree, readable in light and dark mode and printable. The Markdown card stays the source of truth; regenerate the HTML whenever the card changes, and skip it for cards that are plain lists.

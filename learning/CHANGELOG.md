@@ -7,6 +7,15 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-01
+
+### Added
+- A **Gotchas** section in both skills, from real sessions: list the facts a challenge or check depends on and teach the missing ones first; treat a miss on untaught material as curriculum (syllabus) debt rather than the user's gap; one question per message, with a structured choice tool for multiple-choice checks where the harness has one; safety as a prerequisite module in domains with physical risk.
+- **HTML companion** for reference cards: when a card holds a formula, a calculation or a decision procedure, both skills also write a self-contained `{slug}.html` with a small calculator, slider or clickable decision tree. The Markdown card stays the source of truth.
+
+### Changed
+- Both skills run at `effort: medium` while active. Tutoring is an in-the-loop back-and-forth, so the session's higher default effort mostly added latency.
+
 ## [0.3.0] - 2026-09-29
 
 ### Added
