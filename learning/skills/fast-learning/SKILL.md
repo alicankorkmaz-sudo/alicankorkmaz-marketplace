@@ -1,6 +1,6 @@
 ---
 name: fast-learning
-description: Teach the user to DO one concrete thing with a topic by a deadline — speed to functional competence, not expertise. Placement test, the 20% syllabus that unlocks the outcome, retrieval checks, a spaced-retrieval queue and graded Feynman explain-backs, in a stateful workspace across sessions. Use when the user says "teach me X fast", "I need to be able to do Y by Z", "crash course", or invokes /learning:fast-learning. For depth-first, long-term expertise use the sibling skill road-to-mastery instead.
+description: 'Use when the user must be able to DO something with a topic by a deadline or soon (an exam, interview, new job, demo or project date) or asks to learn something fast: "teach me X fast", "crash course", "I need to be able to do Y by Z", "X''i 2 haftada öğrenmem lazım", "hızlı öğret", "hafta sonuna kadar öğrenmem lazım", or invokes /learning:fast-learning. Also use to resume a fast-learning workspace: the user says "devam edelim" / "let''s continue" or answers a check while SYLLABUS.md, SRS.md or PLACEMENT.md exist in the working directory or a topic subdirectory. Runs a placement test, a 20% syllabus, retrieval checks, a spaced-retrieval queue and explain-backs across sessions. Not for one-off questions (answer those directly) or open-ended long-term expertise (use road-to-mastery).'
 argument-hint: What do you need to learn, by when?
 effort: medium
 ---
@@ -82,11 +82,11 @@ First session only: run Phase 0 → 1 → 2, then start teaching in the same sit
 
 ### Phase 0 — Mission (first session)
 
-Get the outcome, the deadline and the weekly hours. Convert "understand X" into "be able to do Y by Z". No deadline given → four weeks from today, and say that you defaulted it. Write `MISSION.md`; confirm it back in two lines.
+Get the outcome, the deadline and the weekly hours, asking for whatever is missing one item per message (nothing, if the user gave all three). Convert "understand X" into "be able to do Y by Z". No deadline given → four weeks from today, and say that you defaulted it. Write `MISSION.md`; confirm it back in two lines.
 
 ### Phase 1 — Placement (first session, ~10 min)
 
-If `RESOURCES.md` is empty, populate it first from high-trust sources. Draft the candidate concept list from it. Test with 6–10 rapid items, easiest to hardest, mixing recall and one-sentence explanations. Stop after three consecutive misses; concepts past the stop point count as unknown. Write `PLACEMENT.md`. Known concepts go to `SRS.md` at box 3 and are **not taught**. Shaky ones get a short lesson. Misconceptions are addressed inside the lesson that touches them.
+If `RESOURCES.md` is empty, populate it first from high-trust sources. Draft the candidate concept list from it. Test with 6–10 rapid items, easiest to hardest, one item per message, each probing one fact, mixing recall and one-sentence explanations. Stop after three consecutive misses; concepts past the stop point count as unknown. Write `PLACEMENT.md`. Known concepts go to `SRS.md` at box 3 and are **not taught**. Shaky ones get a short lesson. Misconceptions are addressed inside the lesson that touches them.
 
 ### Phase 2 — Syllabus (first session, ~5 min)
 
@@ -132,7 +132,7 @@ When every load-bearing lesson is done and its concept has survived SRS box 3, t
 
 - A check or exercise that quietly depends on a fact the lesson never gave (a base rate, how a device is built inside, a typical value) reads as a trick, and trust drops. Before asking, list the facts the expected answer rests on; any not yet taught goes into the explanation first.
 - When an answer misses something that was never taught, it is syllabus debt, not a failed check: say so, teach it, and don't move the SRS item down a box for it.
-- One question per message. Stacked questions get partial answers and hide which one the user struggled with. Where the harness has a structured choice tool (e.g. AskUserQuestion), use it for multiple-choice checks.
+- One question per message. Stacked questions get partial answers and hide which one the user struggled with. Before sending, count the asks: a follow-up like "Also, …?" or a second sentence ending in "?" about a different fact is a second question; cut it and ask it next turn. Where the harness has a structured choice tool (e.g. AskUserQuestion), use it for multiple-choice checks.
 - In domains with physical risk (mains electricity, chemistry, lifting), safety is lesson 1 of the hands-on part, not a footnote: no exercise in the real tool before it has been taught and checked.
 
 ## Knowledge discipline

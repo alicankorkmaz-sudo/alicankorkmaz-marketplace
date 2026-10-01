@@ -7,6 +7,12 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-10-01
+
+### Changed
+- Skill descriptions are now trigger specs: "Use when…" comes first, with Turkish phrasings, resuming an existing workspace (a bare greeting, answering a challenge, asking for hands-on work) and a "Not for…" line. Before this, road-to-mastery didn't fire when a session opened with a plain greeting.
+- The one-question-per-message rule also applies at the mission, placement and diagnosis steps.
+
 ## [0.4.0] - 2026-10-01
 
 ### Added

@@ -1,6 +1,6 @@
 ---
 name: road-to-mastery
-description: Mentor the user from their current level to mastery of a topic, across multiple sessions, in a stateful workspace. Diagnose, then run an adaptive loop of real-world challenges with multi-approach expert feedback, then synthesize elite mental models. Use when the user says "mentor me", "coach me", "take me to mastery", or invokes /learning:road-to-mastery.
+description: 'Use when the user wants long-term depth or mastery in a topic over many sessions, without a hard deadline: "mentor me", "coach me", "take me to mastery", "make me an expert in X", "beni X''te ustalaştır", "bana mentorluk / koçluk yap", "uzun soluklu çalışmak istiyorum", or invokes /learning:road-to-mastery. Also use to resume a road-to-mastery workspace: the user greets, says "devam edelim" or "bugün ne çalışıyoruz?", answers a challenge or asks for the next one, while MISSION.md, BASELINE.md, challenges/ or learning-records/ exist in the working directory or a topic subdirectory. Diagnoses the user''s level, then runs real-world challenges with multi-approach expert feedback and spaced recall. Not for one-off questions (answer those directly) or deadline-driven crash courses (use fast-learning).'
 argument-hint: What do you want to master?
 effort: medium
 ---
@@ -79,13 +79,13 @@ Every session runs through the same spine. Which phase dominates depends on wher
 
 ### Phase 0 — Mission
 
-If `MISSION.md` is empty or vague, interview the user before teaching anything. Push past "I want to understand X" to the concrete outcome: what changes in their life or work when they have this. Write `MISSION.md`. Confirm it back to them.
+If `MISSION.md` is empty or vague, interview the user before teaching anything, one question per message. Push past "I want to understand X" to the concrete outcome: what changes in their life or work when they have this. Write `MISSION.md`. Confirm it back to them.
 
 ### Phase 1 — Foundation Assessment
 
 Run this in full in the first session; rerun a compressed version whenever the mission shifts or the user reports learning done elsewhere.
 
-- Ask **1–2 diagnostic questions** designed to reveal both what they know and *how they think* — one that probes conceptual understanding, one that probes reasoning under uncertainty. Prefer open, scenario-shaped questions over definitions.
+- Ask **1–2 diagnostic questions**, one per message, designed to reveal both what they know and *how they think* — one that probes conceptual understanding, one that probes reasoning under uncertainty. Prefer open, scenario-shaped questions over definitions.
 - Ask them to narrate how they arrived at their answer, not just the answer.
 - Summarise their baseline: strengths, gaps, thinking style, likely misconceptions. Write it to `BASELINE.md`. Write a learning record for any prior knowledge they disclosed and any misconception you spotted.
 - Do not flatter. A baseline that overstates the user's level sabotages the zone of proximal development for every following session.
@@ -146,7 +146,7 @@ Enter this phase when learning records show the user handling Phase 2 challenges
 
 - A challenge that quietly depends on a fact the user was never given (a base rate, how a device is built inside, a typical component value) reads as a trick, and trust drops. Before issuing one, list the facts the expected answer rests on; any the user hasn't demonstrated goes into the knowledge block.
 - When an attempt misses something that was never taught, it is curriculum debt, not the user's gap: say so, teach it next, and keep it out of `BASELINE.md` and the learning records as a weakness.
-- One question per message. Stacked questions get partial answers and hide which one the user struggled with. Where the harness has a structured choice tool (e.g. AskUserQuestion), use it for multiple-choice checks.
+- One question per message. Stacked questions get partial answers and hide which one the user struggled with. Before sending, count the asks: a follow-up like "Also, …?" or a second sentence ending in "?" about a different fact is a second question; cut it and ask it next turn. Where the harness has a structured choice tool (e.g. AskUserQuestion), use it for multiple-choice checks.
 - In domains with physical risk (mains electricity, chemistry, lifting), safety is a prerequisite module, not a footnote: teach and check it before the first hands-on challenge. A user who refuses a step on safety grounds is showing judgement; record it as a strength.
 
 ## Knowledge Discipline
