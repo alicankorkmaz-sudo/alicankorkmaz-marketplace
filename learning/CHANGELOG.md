@@ -7,6 +7,9 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 
 ## [Unreleased]
 
+### Added
+- `evals/`: an 18-case suite for `claude plugin eval` covering triggering and the Gotchas behaviours, with a fictional learner fixture.
+
 ## [0.4.1] - 2026-10-01
 
 ### Changed
