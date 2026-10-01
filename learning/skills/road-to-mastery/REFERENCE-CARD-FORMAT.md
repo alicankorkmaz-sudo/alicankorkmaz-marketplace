@@ -2,7 +2,7 @@
 
 Reference cards live in `./reference/` as Markdown: `{slug}.md`. They are what the user actually revisits. A card is the compressed essence of one coherent unit — a technique, a decision procedure, a mental model, a checklist, a syntax cluster — formatted to scan in thirty seconds and print on one page.
 
-Every card ends with recall questions. They are read back at the start of the next session, from memory, before anything else. This is the spacing mechanism of the whole skill.
+Every card ends with recall questions. Each enters `RECALL.md`, which schedules it ([RECALL-FORMAT.md](./RECALL-FORMAT.md)); due questions are asked at the start of a session, from memory, before anything else. This is the spacing mechanism of the whole skill.
 
 ## Template
 
@@ -33,10 +33,10 @@ _Updated: {date} · Sources: {RESOURCES.md entries}_
 
 - **One unit per card.** If it needs a second heading level, it is two cards.
 - **Recall questions test transfer, not trivia.** "What is X" is weak; "you see symptom Y — which of the two approaches, and why" is strong.
-- **Rotate recall questions.** When the user answers a question correctly across two sessions, retire it and add a harder one. Record persistent misses as a learning record.
+- **Rotate recall questions upward.** When a question reaches box 4 in `RECALL.md`, replace it with a harder one about the same principle (see the rotation rule there). Record persistent misses as a learning record.
 - **Cards supersede lessons.** If a challenge or knowledge block said it better, move it here; the challenge file is the log, the card is the artefact.
 - **Print test.** If it wouldn't survive being printed and pinned above a desk, it is not finished.
 
 ## HTML companion
 
-When a card holds a formula, a calculation or a decision procedure that is easier to grasp by playing with it, also write `{slug}.html` next to it: one self-contained page (inline CSS and JS, no network) with the same content plus a small calculator, slider or clickable decision tree, readable in light and dark mode and printable. The Markdown card stays the source of truth; regenerate the HTML whenever the card changes, and skip it for cards that are plain lists.
+Some cards get a page next to them: an **explore** page (predict, then reveal; also the simulation rung), a **field** page (a job aid for the bench that answers freely) or the skill **map**. Recall questions stay on the Markdown card and are asked in the conversation; they never go on a page. When to write one, which type, and the rules: [HTML-COMPANION-FORMAT.md](./HTML-COMPANION-FORMAT.md).

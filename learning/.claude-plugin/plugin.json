@@ -1,7 +1,7 @@
 {
   "name": "learning",
-  "version": "0.4.1",
-  "description": "Two stateful learning skills for coding agents, same workspace model, opposite optimisation: fast-learning (speed to functional competence by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs) and road-to-mastery (depth-first mentorship to expertise: diagnosis, adaptive real-world challenges, multi-approach expert feedback, elite mental models, spaced recall).",
+  "version": "0.5.0",
+  "description": "Two stateful learning skills for coding agents, same workspace model, opposite optimisation: fast-learning (the essential core of a topic, fast and retained: placement test, Pareto pruning, learning-science shortcuts, retrieval checks, spaced-retrieval queue, graded explain-backs, user-set pace) and road-to-mastery (depth-first mentorship to expertise: diagnosis, skill map, worked-example-to-field challenge ladder, multi-approach expert feedback, elite mental models, spaced recall).",
   "author": {
     "name": "Alican Korkmaz",
     "url": "https://github.com/alicankorkmaz-sudo"
@@ -9,6 +9,6 @@
   "homepage": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/tree/main/learning",
   "repository": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace",
   "license": "MIT",
-  "keywords": ["learning", "teaching", "mentorship", "mastery", "crash-course", "spaced-repetition", "retrieval-practice", "feynman", "deliberate-practice", "productivity"],
+  "keywords": ["learning", "teaching", "mentorship", "mastery", "crash-course", "pareto", "worked-examples", "spaced-repetition", "retrieval-practice", "feynman", "deliberate-practice", "productivity"],
   "skills": ["./skills/fast-learning", "./skills/road-to-mastery"]
 }

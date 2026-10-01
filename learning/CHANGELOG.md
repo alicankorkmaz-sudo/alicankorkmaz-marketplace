@@ -7,8 +7,29 @@ Before 0.2.0 the two skills shipped as separate plugins, `fast-learning` (0.1.0)
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-01
+
+Both skills now say what the plugin was meant to be: learning built on well-replicated findings about memory and understanding, stateful across sessions, paced by the user. `fast-learning` gets fast by pruning and by teaching smarter, never by skipping retention.
+
 ### Added
-- `evals/`: an 18-case suite for `claude plugin eval` covering triggering and the Gotchas behaviours, with a fictional learner fixture.
+- `SHORTCUTS.md` in both skills: a catalogue of evidence-backed teaching techniques (skeleton first, analogy bridge with its break point, predict first, worked → faded → problem, misconception first, contrast pairs, picture plus words, concrete then abstract, small chunks, expert heuristics, explain why, memory or field card), each with when, how, why it works and its pitfall, plus a short list of things that feel efficient and aren't.
+- `HTML-COMPANION-FORMAT.md` in both skills: every page has one type: **explore** (predict, then reveal), **field** (a job aid that answers freely) or **map**. Pages are written only when the protocol sends the learner to them.
+- `fast-learning`: a **Pareto map** in `SYLLABUS.md`. Every concept of the topic is sorted into core, support, field card (looked up, not memorised) or pruned, with the deciding signal named; the user sees it in six lines and can move items. Pruned concepts become the depth backlog for `road-to-mastery`.
+- `fast-learning`: **pace** (fast · steady · slow) as a preference in `NOTES.md` / `LEARNER.md`, changeable at any time. Pace never removes the SRS drill, the check, the explain-back or the interleave.
+- `fast-learning`: lessons open with an ungraded prediction and record the shortcuts used; reference cards get a *Look it up* section for field-card items.
+- `road-to-mastery`: `SKILL-MAP.md`: the mission broken into 8–20 skills with prerequisites and evidence-backed levels (unseen · knowledge · guided · independent · transfer). The zone of proximal development is read off its *Next* section.
+- `road-to-mastery`: `RECALL.md`, a spaced-recall queue for every card's recall questions on the same six-box schedule as `fast-learning`, with upward rotation at box 4. Older questions now come back on schedule instead of being carried over by hand. (Not named `SRS.md`, which `fast-learning` treats as its workspace marker.)
+- `road-to-mastery`: a **rung ladder** per skill: worked example → faded example → scenario → simulation → bench → field. A new skill starts at the worked rung; a node reaches *independent* only after a bench or field rung where the domain has one.
+- `evals/`: a 19-case suite for `claude plugin eval` covering triggering, the Gotchas behaviours and the no-deadline trigger, with a fictional learner fixture.
+
+### Changed
+- `fast-learning` has **no deadline**. Removed: the four-week default, hours per week, the time budget and 80% cap, the per-session fit check, minutes per lesson and the Cuts list. A lesson is sized by new ideas (about four at most) instead of minutes. Understanding goals are accepted once made observable.
+- `road-to-mastery`: the user states the transferable principle first, then the mentor refines it; expert heuristics are given when a skill opens instead of waiting for Phase 3; session start drills `RECALL.md` instead of the latest card's questions.
+- HTML companions no longer carry recall questions, and a concept still below box 3 never gets a page that computes its answer without a prediction gate.
+- Skill descriptions: `fast-learning` triggers on "learn the essentials fast" without a date; `road-to-mastery` is "the whole topic rather than its essentials".
+
+### Migration
+- Existing workspaces keep working. `fast-learning` ignores legacy deadline and budget fields and drops them on the next rewrite (Cuts move to Pruned). `road-to-mastery` seeds `RECALL.md` from existing cards and builds `SKILL-MAP.md` from the mission, baseline and records at the first session, after showing it to the user. Old HTML pages are rewritten to the new rules when their card is next touched.
 
 ## [0.4.1] - 2026-10-01
 

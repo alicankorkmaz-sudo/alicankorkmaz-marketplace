@@ -35,3 +35,4 @@ _Last assessed: {date}, session {n}_
 - **Never inflate.** Overstating the level ruins the zone of proximal development for every later session.
 - **Thinking style is the point.** Two users with the same knowledge can need very different challenges. Capture how they think.
 - **Rewrite in place.** History lives in learning records, not here. This file is always the current best read.
+- **Narrative here, levels in the map.** Per-skill levels and their evidence live in `SKILL-MAP.md`; this file holds the overall picture and the thinking style. Keep the two consistent when either changes.

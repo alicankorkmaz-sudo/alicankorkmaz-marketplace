@@ -14,7 +14,7 @@ _Updated {YYYY-MM-DD}_
 - [{Title}]({url}) — {type: official docs | book | paper | talk | reference implementation}
   Why trusted: {primary source / author's standing / peer-reviewed}. Use for: lessons {n–m}. Skip: {chapters or sections the mission does not need}.
 
-## After the deadline (for depth)
+## Later (for depth)
 - [{Title}]({url}) — {type}
   {One line: what it adds beyond the mission. Hand to road-to-mastery if the user continues.}
 

@@ -1,39 +1,56 @@
 # SYLLABUS.md Format
 
-`SYLLABUS.md` is the ordered list of lessons that unlock the mission outcome, bounded by the time budget in `MISSION.md`. It is the contract on what will be taught, what is deferred, and what was cut to make the deadline.
+`SYLLABUS.md` holds the Pareto map of the topic and the ordered lessons that teach its core. It is the contract on what will be taught, what goes on a field card, and what was deliberately left out.
 
 ## Template
 
 ```md
 # Syllabus: {Topic}
 
-_Deadline {YYYY-MM-DD} · Available {min} min · Cap (80%) {min} min · Planned {min} min · Updated {YYYY-MM-DD}_
+_Updated {YYYY-MM-DD}_
 
-| # | Lesson | Unlocks | Min | Status |
-|---|---|---|---|---|
-| 1 | {title} | {which done-when check or later lesson it enables} | 20 | done |
-| 2 | {title} | {…} | 20 | explain-back-pending |
-| 3 | {title} | {…} | 15 | next |
-| 4 | {title} | {…} | 25 | planned |
+## Pareto map
 
-Status: planned · next · in-progress · done · explain-back-pending · cut
+### Core (the outcome fails without these)
+- {concept} — {deciding signal: used constantly / N concepts depend on it / costly when wrong / transfers from {known domain}}
 
-## Deferred (not needed for the outcome)
-- {concept} — why it can wait · pick it up at: {source or road-to-mastery}
+### Support (only so a core concept works; teach the minimum)
+- {concept} — {which core concept needs it}
 
-## Cuts (were planned, removed to fit the time budget)
-- {YYYY-MM-DD} · #{n} {title} — {reason: fit check failed by {x} min / mission narrowed}
+### Field card (looked up, not memorised)
+- {concept or table} — {why it is rare, exact or long} · card: reference/{slug}.md
+
+### Pruned (does not move the outcome)
+- {concept} — {why it can go} · pick it up at: {source or road-to-mastery}
+
+## Lessons
+
+| # | Lesson | Unlocks | Status |
+|---|---|---|---|
+| 1 | {title} | {which done-when check or later lesson it enables} | done |
+| 2 | {title} | {…} | explain-back-pending |
+| 3 | {title} | {…} | next |
+| 4 | {title} | {…} | planned |
+
+Status: planned · next · in-progress · done · explain-back-pending
+
+## Promoted (were pruned or on a field card, now taught)
+- {YYYY-MM-DD} · {concept} — {what ran into it}
 ```
 
 ## Rules
 
-- **Planned minutes ≤ 80% of available minutes.** Recompute on every session start. Over → cut from the bottom, log the cut, tell the user.
-- **15–25 minutes per lesson.** Longer means two lessons. Shorter means it is a check inside another lesson, not a lesson.
-- **Every row names what it unlocks.** A lesson that unlocks nothing in `MISSION.md` is deferred, not planned.
+- **Map the whole topic, not just the plan.** Every concept the resources cover gets a class. The pruned list is what makes the core credible.
+- **Name the deciding signal.** Frequency of use, number of dependants, cost of error, transfer from known material. A concept with none of these is pruned.
+- **Never prune safety**, nor a concept whose misunderstanding silently breaks the outcome.
+- **Field card means looked up.** Tables, flags, typical values, exact syntax that is rarely used. If the user keeps looking the same item up, move it to a lesson.
+- **Lessons cover core and support only.** A lesson that unlocks nothing in `MISSION.md` shouldn't exist; its concept is pruned.
+- **At most about four new ideas per lesson.** More means two lessons. One idea means it is a check inside another lesson.
 - **Prerequisite order, then interleave.** Once prerequisites are satisfied, alternate related-but-distinct areas rather than blocking one area for several lessons.
 - **Exactly one `next`.** Set it at session close so the next session starts without deliberation.
 - **`explain-back-pending` is not done.** The lesson was taught but the explain-back failed; the retest happens at the next session start, after the SRS drill.
-- **Re-lessons are rows too.** Two SRS misses in a row add a 10–15 minute re-lesson row, marked as such in the title.
-- **Deferred entries say where to pick them up.** Deferred is a promise, not a dustbin.
-- **Cuts are dated and reasoned.** The user should be able to see exactly what the deadline cost them.
-- **Show it in five lines.** When presenting the syllabus in conversation, summarise; the table stays in the file.
+- **Re-lessons are rows too.** Two SRS misses in a row add a short re-lesson row, marked as such in the title, taught with a different shortcut.
+- **Pruned entries say where to pick them up.** They become the backlog if the user later deepens with `road-to-mastery`.
+- **Promotions are dated and reasoned.** Pruning was a bet; the Promoted list shows where it lost.
+- **Show it in six lines.** When presenting the map in conversation, summarise; the full lists stay in the file.
+- **Legacy fields** (deadline, minutes, budget header, Cuts list) from earlier versions are dropped on the next rewrite; Cuts entries move to *Pruned*.

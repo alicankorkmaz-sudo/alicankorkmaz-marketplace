@@ -1,6 +1,6 @@
 # Reference Card Format
 
-Reference cards live in `./reference/` as Markdown: `{slug}.md`. A card is the one page the user keeps after the deadline: the compressed essence of one concept or procedure, printable, scannable in thirty seconds. Every card ends with recall questions that `SRS.md` points at.
+Reference cards live in `./reference/` as Markdown: `{slug}.md`. A card is the one page the user keeps: the compressed essence of one concept or procedure, printable, scannable in thirty seconds. Every card ends with recall questions that `SRS.md` points at.
 
 ## Template
 
@@ -21,7 +21,10 @@ _Updated {YYYY-MM-DD} · Lessons {NNNN, NNNN} · Sources: {RESOURCES.md entries}
 ## Edge case that matters here
 - {The edge case the mission cares about, and what to do}
 
-## Read in full, after the deadline
+## Look it up
+{Field-card items from the Pareto map: tables, flags, typical values, rarely used syntax. Looked up, not memorised, so no recall questions about them.}
+
+## Read in full, later
 - [{The single best source}]({url})
 
 ## Recall questions
@@ -39,8 +42,9 @@ _Updated {YYYY-MM-DD} · Lessons {NNNN, NNNN} · Sources: {RESOURCES.md entries}
 - **Recall questions drive SRS.** Each SRS row's card column points here; the questions are what get asked from memory at session start.
 - **Rotate questions.** After two consecutive hits on a question, replace it with a harder one. Log persistent misses in the lesson file's retest section.
 - **Cards are updated, lessons are not.** When a later lesson sharpens a concept, edit the card in place and bump the date.
+- **Look it up is not tested.** Recall questions cover what goes into memory; field-card items are there to be found. Omit the section when the card has none.
 - **Print test.** If it would not survive being printed and pinned above a desk, it is not finished.
 
 ## HTML companion
 
-When a card holds a formula, a calculation or a decision procedure that is easier to grasp by playing with it, also write `{slug}.html` next to it: one self-contained page (inline CSS and JS, no network) with the same content plus a small calculator, slider or clickable decision tree, readable in light and dark mode and printable. The Markdown card stays the source of truth; regenerate the HTML whenever the card changes, and skip it for cards that are plain lists.
+Some cards get a page next to them: an **explore** page (predict, then reveal), a **field** page (a job aid that answers freely) or the topic **map**. Recall questions stay on the Markdown card and are asked in the conversation; they never go on a page. When to write one, which type, and the rules: [HTML-COMPANION-FORMAT.md](./HTML-COMPANION-FORMAT.md).

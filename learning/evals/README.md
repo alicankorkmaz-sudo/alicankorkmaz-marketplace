@@ -1,6 +1,6 @@
 # Evals
 
-18 cases for the two skills: triggering (fast-learning, road-to-mastery or neither, Turkish and English) and behaviour (recall first at session start, one question per message, untaught facts supplied with the challenge, curriculum debt vs gap, safety before hands-on, no shared root). Cases are tagged `train` or `test` so a skill-text change can be checked for overfitting.
+19 cases for the two skills: triggering (fast-learning, road-to-mastery or neither, Turkish and English, with and without a date) and behaviour (recall first at session start, one question per message, untaught facts supplied with the challenge, curriculum debt vs gap, safety before hands-on, no shared root). Cases are tagged `train` or `test` so a skill-text change can be checked for overfitting.
 
 Run from `learning/`:
 

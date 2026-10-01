@@ -10,8 +10,8 @@ cat > "$D/MISSION.md" <<MD
 <!-- fast-learning -->
 # Mission: KiCad ile basit PCB
 
-**Outcome:** $(ahead 9) tarihine kadar basit bir devreyi (USB-C besleme + LED + direnç) KiCad'de şemadan 2 katmanlı karta çevirip Gerber üretip JLCPCB'ye sipariş verebilmek.
-**Deadline:** $(ahead 9) · **Hours/week:** 6
+## Outcome
+Basit bir devreyi (USB-C besleme + LED + direnç) KiCad'de şemadan 2 katmanlı karta çevirip Gerber üretip JLCPCB'ye sipariş verebilmek.
 ## Done when
 - Şema ERC hatasız.
 - PCB DRC hatasız, Gerber + drill dosyaları JLCPCB görüntüleyicisinde doğru.
@@ -22,16 +22,29 @@ cat > "$D/SYLLABUS.md" <<MD
 <!-- fast-learning -->
 # Syllabus: KiCad ile basit PCB
 
-_Deadline $(ahead 9) · Available 720 min · Cap (80%) 576 min · Planned 160 min · Updated $(ago 2)_
+_Updated $(ago 2)_
 
-| # | Lesson | Unlocks | Min | Status |
-|---|---|---|---|---|
-| 1 | Proje yapısı, sembol yerleştirme, kablolama | Şema çizimi | 20 | done |
-| 2 | Net etiketleri, güç sembolleri, ERC | Done-when 1 | 20 | done |
-| 3 | Sembol → footprint ataması | PCB'ye geçiş | 20 | next |
-| 4 | Kart sınırı, yerleşim, track genişliği | Routing | 25 | planned |
-| 5 | DRC ve JLCPCB tasarım kuralları | Done-when 2 | 20 | planned |
-| 6 | Gerber + drill üretimi ve sipariş | Outcome | 20 | planned |
+## Pareto map
+### Core
+- Şema: sembol, kablo, net etiketi, ERC — her projede kullanılır
+- Footprint ataması, yerleşim, routing, DRC — karta geçişin tamamı buna bağlı
+- Gerber + drill üretimi — outcome'un son adımı
+### Support
+- Güç sembolleri ve PWR_FLAG — ERC'nin temiz çıkması için
+### Field card
+- JLCPCB minimum track/clearance değerleri — tam sayılar, bakılır · card: reference/0001-sema-temelleri.md
+### Pruned
+- Hiyerarşik şema, diferansiyel çift, empedans kontrolü — basit 2 katmanlı kartta gerekmez · pick it up at: KiCad docs
+
+## Lessons
+| # | Lesson | Unlocks | Status |
+|---|---|---|---|
+| 1 | Proje yapısı, sembol yerleştirme, kablolama | Şema çizimi | done |
+| 2 | Net etiketleri, güç sembolleri, ERC | Done-when 1 | done |
+| 3 | Sembol → footprint ataması | PCB'ye geçiş | next |
+| 4 | Kart sınırı, yerleşim, track genişliği | Routing | planned |
+| 5 | DRC ve JLCPCB tasarım kuralları | Done-when 2 | planned |
+| 6 | Gerber + drill üretimi ve sipariş | Outcome | planned |
 MD
 cat > "$D/SRS.md" <<MD
 <!-- fast-learning -->
@@ -60,4 +73,4 @@ cat > "$D/reference/0001-sema-temelleri.md" <<MD
 2. ERC "power input not driven" hatası verdiğinde ne eklersin?
 3. Sembol ile footprint arasındaki fark ne?
 MD
-printf '# Notes\n\n- Kısa ders, bol pratik.\n' > "$D/NOTES.md"
+printf '# Notes\n\n- Pace: steady.\n- Kısa ders, bol pratik.\n' > "$D/NOTES.md"

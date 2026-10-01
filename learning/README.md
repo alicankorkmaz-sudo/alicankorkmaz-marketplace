@@ -2,22 +2,23 @@
 
 One Claude Code plugin, two stateful learning skills for coding agents:
 
-- **`fast-learning`**: the fast lane. You say what you need to be able to do and by when; it places you, teaches only the 20% that unlocks that outcome, tests you from memory, spaces the retrieval across sessions and grades a Feynman explain-back after every lesson.
-- **`road-to-mastery`**: the depth lane. It takes you from your current level to mastery of any topic (a language, a framework, negotiation, strength training) through a disciplined loop: mission → diagnosis → adaptive real-world challenges → multi-approach expert feedback → elite mental models → spaced recall.
+- **`fast-learning`**: the fast lane. You say what you want to be able to do; it places you, maps the topic and prunes it to the roughly 20% that carries roughly 80% of the outcome, teaches that core with learning-science shortcuts (skeleton first, analogy bridges, predict-first, worked examples), tests you from memory, spaces the retrieval across sessions and grades a Feynman explain-back after every lesson. No deadline: you set the pace.
+- **`road-to-mastery`**: the depth lane. It takes you from your current level to mastery of any topic (a language, a framework, negotiation, strength training) through a disciplined loop: mission → diagnosis → skill map → a ladder from worked examples to real-world challenges at the bench and in the field → multi-approach expert feedback → elite mental models → spaced recall.
 
-Pick `fast-learning` when there is a date and a deliverable. Pick `road-to-mastery` when there is a craft and years. Both can be used in the same session.
+Both share one design: built on well-replicated findings about memory and understanding (retrieval, spacing, generation, worked examples, interleaving), stateful across sessions so you pick up where you left off, paced by you. Pick `fast-learning` when you want the essential core of a topic, working and retained. Pick `road-to-mastery` when you want the whole craft. Both can be used in the same session.
 
 ## Fast Learning vs. Road to Mastery
 
 | | `fast-learning` | `road-to-mastery` |
 |---|---|---|
-| **Goal** | Be able to *do Y by Z*: functional competence by a deadline | Mastery: field-ready expertise, validated outside the workspace |
-| **Engine** | Direct instruction, seven-step lesson loop, 15–25 min per lesson | Adaptive challenge loop: knowledge block → real-world challenge → feedback triad |
+| **Goal** | Be able to *do Y*: the essential core of a topic, working and retained | Mastery: field-ready expertise, validated outside the workspace |
+| **Speed / depth from** | Pruning (Pareto map) + shortcuts ([SHORTCUTS.md](./skills/fast-learning/SHORTCUTS.md)) | A rung ladder per skill: worked → faded → scenario → simulation → bench → field |
+| **Engine** | Direct instruction, seven-step lesson loop opening with a prediction | Adaptive challenge loop: knowledge block → challenge on the current rung → feedback triad |
 | **Assessment** | Placement test first (6–10 items, stop at three misses); per-lesson checks; graded explain-back | Diagnosis of level *and thinking style*; meta-cognition prompt before every piece of feedback |
-| **Plan** | `SYLLABUS.md`: ordered lessons capped at 80% of available minutes, with Deferred and Cuts lists | Zone of proximal development computed from learning records; no fixed plan |
-| **Retention** | `SRS.md` spaced-retrieval queue (six boxes, +2/+5/+12/+30 days), drilled at every session start | Recall questions on each reference card, asked at the next session start |
-| **Session shape** | SRS drill → fit check → 2–3 lessons → card + due dates | Recall → knowledge block → challenge → attempt → feedback → calibrate |
-| **Ending** | Graduation when every load-bearing concept survives SRS box 3; then hold with weekly drills or hand off to road-to-mastery | Phase 3 elite synthesis and a hand-off to a real-world community |
+| **Plan** | `SYLLABUS.md`: Pareto map (core · support · field card · pruned) and ordered lessons | `SKILL-MAP.md`: skills with prerequisites and evidence-backed levels; the zone of proximal development is read off it |
+| **Retention** | `SRS.md` spaced-retrieval queue (six boxes, +2/+5/+12/+30 days), drilled at every session start | `RECALL.md`: every card's recall questions on the same six-box schedule, drilled at every session start |
+| **Session shape** | SRS drill → 1–3 lessons by pace → card + due dates | Recall → knowledge block → challenge → attempt → feedback → calibrate |
+| **Ending** | Graduation when every core concept survives SRS box 3; then hold with weekly drills or hand off to road-to-mastery | Phase 3 elite synthesis and a hand-off to a real-world community |
 
 ## Install
 
@@ -31,7 +32,7 @@ Pick `fast-learning` when there is a date and a deliverable. Pick `road-to-maste
 Then, in a directory you use as your learning home (e.g. `~/learning`):
 
 ```
-/learning:fast-learning Deploy a FastAPI service to Fly.io with Postgres, by 1 October
+/learning:fast-learning Deploy a FastAPI service to Fly.io with Postgres
 /learning:road-to-mastery Rust ownership and borrowing
 ```
 
@@ -53,23 +54,23 @@ Paste the skill's `SKILL.md` as a project instruction. Both skills detect that t
 
 ### How a session runs
 
-1. **Start (~5 min).** Reads the workspace, asks every SRS item due today from memory, checks that the remaining lessons still fit before the deadline, says what today covers.
-2. **First session only.** Mission (outcome, deadline, hours per week) → placement test → syllabus shown in five lines → first lesson, all in one sitting.
-3. **Lessons (2–3 per session).** Hook → simple explanation → check → deeper dive → exercise in the real tool → explain-back graded on three criteria → one interleaved recall question.
-4. **Close (~3 min).** SRS due dates updated, reference card written, three lines: what you can now do, what is due next time, one thing to try before then.
+1. **Start (~5 min).** Reads the workspace, asks every SRS item due today from memory, says what today covers.
+2. **First session only.** Mission (what you want to be able to do) → placement test → Pareto map shown in six lines, which you can adjust → first lesson, all in one sitting.
+3. **Lessons (1–3 per session, by pace: fast · steady · slow).** Hook and an ungraded prediction → simple explanation built with one or two shortcuts → check → deeper dive → exercise in the real tool or on an explore page → explain-back graded on three criteria → one interleaved recall question.
+4. **Close (~3 min).** SRS due dates updated, reference card written (with a *Look it up* section for field-card items), three lines: what you can now do, what is due next time, one thing to try before then.
 
 ### Workspace layout
 
 ```
-MISSION.md            be able to do Y by Z, hours/week, done-when checks, out of scope
+MISSION.md            be able to do Y, done-when checks, out of scope
 PLACEMENT.md          known / shaky / unknown / misconceptions, with evidence
-SYLLABUS.md           ordered lessons, minutes, status; Deferred and Cuts lists
+SYLLABUS.md           Pareto map (core / support / field card / pruned), ordered lessons, status
 SRS.md                spaced-retrieval queue: box, due, last result, streak, card
 RESOURCES.md          high-trust sources, every entry annotated
 GLOSSARY.md           terms you have passed explain-back on
-NOTES.md              your preferences
-lessons/              0001-…md  one file per lesson as taught, explain-back verbatim
-reference/            printable one-page cards, each ending in recall questions
+NOTES.md              your preferences: pace, shortcuts that land
+lessons/              0001-…md  one file per lesson as taught, shortcuts used, explain-back verbatim
+reference/            printable one-page cards ending in recall questions; optional HTML companions
 ```
 
 ## road-to-mastery
@@ -89,7 +90,8 @@ A hybrid of two things:
 | — | Meta-cognition prompt before every piece of feedback |
 | — | Challenge design rules: hidden assumption / edge case / counter-intuitive twist, "step sideways not down" |
 | — | Phase 3: top-performer mental models (graded by evidence), guided novel application, reflective synthesis |
-| Spacing mentioned as principle | Spacing implemented: every reference card ends in 3–5 recall questions, asked from memory at the next session start |
+| Spacing mentioned as principle | Spacing implemented: every card's recall questions enter `RECALL.md` on a six-box schedule, asked from memory at session start |
+| Zone of proximal development from records | `SKILL-MAP.md`: skills with prerequisites and evidence-backed levels; worked → faded → challenge ladder up to the bench and the field |
 | — | Conversation mode for agents without a filesystem |
 | — | Language rule: mirror the user's language, switch when they switch |
 
@@ -100,13 +102,21 @@ Everything in `teach` that mattered is kept: never trust parametric knowledge, c
 ```
 MISSION.md            why you're doing this
 BASELINE.md           where you stand and how you think
+SKILL-MAP.md          the mission as skills: prerequisites, level, rung reached, evidence, next
+RECALL.md             spaced-recall queue for every card's recall questions
 RESOURCES.md          trusted sources, mental-model sources, communities
 GLOSSARY.md           canonical terms and transferable principles
 NOTES.md              your preferences
 challenges/           0001-…md  one file per challenge cycle
 learning-records/     0001-…md  decision-grade insights
-reference/            printable cards, each ending in recall questions
+reference/            printable cards ending in recall questions; optional HTML companions
 ```
+
+## HTML companions
+
+Both skills can write a page next to a reference card, of exactly one type: **explore** (predict, then reveal: the page asks for your prediction before it computes anything), **field** (a job aid for the bench that answers freely) or **map** (the Pareto map or skill map as a diagram). Recall questions never go on a page: they are asked in the conversation, where the answer and its reason can be graded and the queue updated. Rules: [HTML-COMPANION-FORMAT.md](./skills/fast-learning/HTML-COMPANION-FORMAT.md).
+
+`SHORTCUTS.md` and `HTML-COMPANION-FORMAT.md` ship in both skill directories so each skill stays self-contained; keep the two copies identical.
 
 ## Topics
 
@@ -149,7 +159,7 @@ Rule of thumb: one directory per skill per topic, all inside one learning home.
 
 ## Contributing
 
-Open an issue describing the teaching problem you hit, ideally with the lesson or challenge file that shows it. PRs that change a `SKILL.md` should say which learning need they serve: for `fast-learning`, which of the five speed levers, or which retention failure they prevent; for `road-to-mastery`, which of knowledge, skills or wisdom.
+Open an issue describing the teaching problem you hit, ideally with the lesson or challenge file that shows it. PRs that change a `SKILL.md` should say which learning need they serve: for `fast-learning`, which of the seven levers, or which retention failure they prevent; for `road-to-mastery`, which of knowledge, skills or wisdom.
 
 ## License
 
