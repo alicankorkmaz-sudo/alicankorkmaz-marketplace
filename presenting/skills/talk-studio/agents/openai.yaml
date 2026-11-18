@@ -1,0 +1,5 @@
+interface:
+  display_name: "Talk Studio"
+  short_description: "Research, decide and distil a talk into a narrative flow document in a stateful workspace"
+policy:
+  allow_implicit_invocation: false

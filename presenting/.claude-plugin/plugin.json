@@ -1,0 +1,14 @@
+{
+  "name": "presenting",
+  "version": "0.1.0",
+  "description": "talk-studio: a stateful workspace for preparing a talk across many sessions. Builds a graded research knowledge base the user can question, records decisions from the idea exchange, and distils it into a narrative flow document: per section the minutes, purpose, what is said with background, slide content, conversation question and bridge.",
+  "author": {
+    "name": "Alican Korkmaz",
+    "url": "https://github.com/alicankorkmaz-sudo"
+  },
+  "homepage": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace/tree/main/presenting",
+  "repository": "https://github.com/alicankorkmaz-sudo/alicankorkmaz-marketplace",
+  "license": "MIT",
+  "keywords": ["presentation", "talk", "public-speaking", "research", "knowledge-base", "storytelling", "meeting", "workshop", "productivity"],
+  "skills": ["./skills/talk-studio"]
+}

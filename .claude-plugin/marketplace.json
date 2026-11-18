@@ -4,14 +4,36 @@
     "name": "Alican Korkmaz",
     "url": "https://github.com/alicankorkmaz-sudo"
   },
-  "description": "Learning skills for coding agents: fast-learning (speed to functional competence by a deadline) and road-to-mastery (depth-first mentorship to expertise), shipped as one plugin.",
+  "description": "Skills for coding agents: learning (fast-learning and road-to-mastery) and presenting (talk-studio, a stateful workspace for researching and planning a talk).",
   "plugins": [
     {
       "name": "learning",
       "source": "./learning",
       "description": "Two learning skills: fast-learning (do one concrete thing by a deadline: placement test, 20% syllabus, retrieval checks, spaced-retrieval queue, graded explain-backs) and road-to-mastery (mentorship to expertise: mission, diagnosis, adaptive challenges with multi-approach expert feedback, elite mental models, spaced recall).",
       "category": "productivity",
-      "keywords": ["learning", "teaching", "mentorship", "mastery", "crash-course", "spaced-repetition", "retrieval-practice"]
+      "keywords": [
+        "learning",
+        "teaching",
+        "mentorship",
+        "mastery",
+        "crash-course",
+        "spaced-repetition",
+        "retrieval-practice"
+      ]
+    },
+    {
+      "name": "presenting",
+      "source": "./presenting",
+      "description": "talk-studio: prepare a talk across sessions. Graded research knowledge base you can question, decisions log, and a narrative flow document with per-section slides, conversation questions and bridges.",
+      "category": "productivity",
+      "keywords": [
+        "presentation",
+        "talk",
+        "public-speaking",
+        "research",
+        "knowledge-base",
+        "storytelling"
+      ]
     }
   ]
 }

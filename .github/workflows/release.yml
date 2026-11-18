@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*.*.*"
+      - "presenting-v*.*.*"
 
 permissions:
   contents: write
@@ -14,19 +15,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Resolve version from tag
+      - name: Resolve plugin and version from tag
         id: tag
-        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          case "$TAG" in
+            presenting-v*) PLUGIN=presenting; VERSION="${TAG#presenting-v}" ;;
+            v*)            PLUGIN=learning;   VERSION="${TAG#v}" ;;
+            *) echo "Unknown tag $TAG"; exit 1 ;;
+          esac
+          echo "plugin=$PLUGIN" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Check plugin.json version matches tag
         run: |
-          VERSION=$(jq -r .version learning/.claude-plugin/plugin.json)
+          VERSION=$(jq -r .version ${{ steps.tag.outputs.plugin }}/.claude-plugin/plugin.json)
           if [ "$VERSION" != "${{ steps.tag.outputs.version }}" ]; then
             echo "Tag says ${{ steps.tag.outputs.version }}, plugin.json says $VERSION"; exit 1
           fi
 
       - name: Validate manifests
-        run: jq empty .claude-plugin/marketplace.json learning/.claude-plugin/plugin.json
+        run: jq empty .claude-plugin/marketplace.json learning/.claude-plugin/plugin.json presenting/.claude-plugin/plugin.json
 
       - name: Extract changelog section
         run: |
@@ -34,11 +43,11 @@ jobs:
             $0 ~ "^## \\["ver"\\]" {p=1; next}
             p && /^## \[/ {exit}
             p {print}
-          ' learning/CHANGELOG.md > release-notes.md
+          ' ${{ steps.tag.outputs.plugin }}/CHANGELOG.md > release-notes.md
           cat release-notes.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: learning ${{ steps.tag.outputs.version }}
+          name: ${{ steps.tag.outputs.plugin }} ${{ steps.tag.outputs.version }}
           body_path: release-notes.md
